@@ -1,0 +1,17 @@
+h1{
+    text-align: center;
+}
+
+.principalNav{
+    background-color: #20232a ;
+    padding-top: 12.5px;
+    padding-bottom: 12.5px;
+    text-align: center;
+}
+.baner{
+    font-size: 24px;
+    color: #61DBFB;
+}
+.noUnder{
+    text-decoration: none;
+}

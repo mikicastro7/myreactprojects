@@ -1,17 +1,33 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
 import App from './App';
-import reportWebVitals from './reportWebVitals';
+import { Provider } from 'react-redux';
+import { applyMiddleware, createStore, combineReducers, compose } from 'redux';
+import { BrowserRouter } from 'react-router-dom';
+import thunk from 'redux-thunk';
+import Axios from 'axios';
+
+import authReducer from './store/reducers/auth'
+
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+
+Axios.defaults.baseURL = 'http://laravel-api.miquelcastro.com/api/';
+Axios.defaults.headers.post['Content-Type'] = 'application/json';
+
+const rootReducer = combineReducers({
+  auth: authReducer,
+});
+
+const store = createStore(rootReducer, composeEnhancers(
+  applyMiddleware(thunk)
+))
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+  <Provider store={store}>
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
+  </Provider>,
   document.getElementById('root')
 );
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();

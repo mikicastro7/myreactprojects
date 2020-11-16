@@ -1,0 +1,87 @@
+.centerForm{
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  width: 300px;
+}
+.topBar{
+    background-color: #20232a;
+    
+    display: flex;
+    border: 1px solid #61DBFB;
+}
+.register:hover{
+    color: white;
+    text-decoration: underline;
+    text-decoration-color: white;
+}
+.login{
+    text-align: center;
+    color: #61DBFB;
+    text-decoration: none;
+    padding: 12.5px;
+    border-right: 1px solid #61DBFB;
+}
+
+.register{
+    text-align: center;
+    color: white;
+    text-decoration: none;
+    border-left: 1px solid #61DBFB;
+    padding: 12.5px;
+}
+
+.topBarContainer{
+    width: 50%;
+    
+}
+.noUn{
+    text-decoration: none;
+}
+.formTitle{
+    text-align: center;
+    margin: 10px;
+    font-size: 26px;
+}
+.bodyForm{
+    border: 1px solid #61DBFB;
+}
+.formLabel{
+    display: block;
+    font-size: 14px;
+    margin-left: 10%;
+}
+.formInput{
+    margin-left: 10%;
+    width: 72.5%;
+    border: 2px solid rgb(95, 138, 179);
+    border-radius: 3px;
+    padding: 10px;
+    box-shadow: none;
+}
+.formInput:focus{
+    outline: none;
+    border: 2px solid #009fe3;
+    box-shadow: none;
+}
+.formButton{
+    width : 80%;
+    margin-left: 10%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 10px;
+    background-color: #009fe3;
+    border: none;
+    border-radius: 10px;
+    color: white;
+    font-size: 16px;
+}
+.formButton:focus{
+    outline: none;
+}
+.formButton:hover{
+    background-color: #0693cf;
+    cursor: pointer;
+}
