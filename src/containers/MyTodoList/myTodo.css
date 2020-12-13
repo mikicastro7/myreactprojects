@@ -1,0 +1,100 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+  }
+ 
+  .todoButton-div{
+    padding: 10px;
+    text-align: center;
+    margin-bottom: 8px;
+  }
+  .todoButton{
+    padding: 10px;
+    background-color: white;
+    color: #00e6ff;
+    border: 1px solid #dedede;
+    font-size: 20px;
+  }
+  .todoButton:hover{
+    border: 1px solid #707070;
+  }
+  .todoButton:focus{
+    outline: none;
+    box-shadow: none;
+  }
+  .todos{
+    width: 95%;
+    margin: auto;
+  }
+  .todo{
+    padding: 4px;
+    border: 1px solid grey;
+    border-radius: 4px;
+    display:flex;
+    
+  }
+  .todo:hover{
+    background-color: rgba(243, 243, 243, 0.712);
+  }
+  .todoTitle{
+    width: 23%;
+    font-weight: bold;
+    cursor: pointer;
+    text-align: center;
+    margin-left: 15px;
+  }
+  .todoDescription{
+    width: 52%;
+    text-align: center;
+    cursor: pointer;
+  }
+  .todoButtons{
+    width: 20%;
+    text-align: center;
+  }
+  .icon{
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-left: 5px;
+    margin-right: 5px;
+    color: #00e6ff;
+  }
+  .icon:hover{
+    color: #00ccff;
+    cursor: pointer;
+  }
+  .priority{
+    width: 24px;
+    height: 24px;
+    margin-right: 25px;
+    float: left;
+  }
+  .fullInfo{
+    padding: 10px 50px 10px 50px;
+    border: 1px solid grey;
+    border-radius: 4px;
+  }
+  .headercontainer{
+    display: flex;
+    background-color: #20232a;
+    height: 61.5px;
+    align-items: center;
+  }
+  .headerTitle{
+      flex: 0 1 auto;
+      position: absolute;             /* new */
+      left: 50%;
+      transform: translateX(-50%);
+      color: white;
+      margin-bottom: 0px;
+  }
+  .headerMyProjects{
+    color: #61DBFB;
+    font-size: 24px;
+    margin-left: 8%;
+  }
+  .headerMyProjects:hover{
+    color: #61DBFB;
+    text-decoration: none;
+  }

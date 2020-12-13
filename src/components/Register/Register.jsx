@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
+import { Redirect } from 'react-router-dom';
 
 import Header from '../Headers/LoginRegisterHeader'
 import styles from './Register.module.css';
@@ -17,6 +18,18 @@ class Register extends Component {
         this.props.onAuth( this.state.Username, this.state.Password, this.state.ConfirmPassword );
     }
     render() {
+        let errorMessage = null;
+
+        if (this.props.error) {
+            errorMessage = (
+                <p style={{color:"red"}}>{this.props.error}</p>
+            );
+        }
+
+        let authRedirect = null;
+        if (this.props.isAuth) {
+            authRedirect = <Redirect to="/" />
+        }
         return (
             <div>
                 <Header></Header>
@@ -31,6 +44,8 @@ class Register extends Component {
                     </div>
                     <div className={styles.bodyForm}>
                         <h3 className={styles.formTitle}>Welcome register</h3>
+                        {errorMessage}
+                        {authRedirect}
                         <form onSubmit={this.submitHandler}>
                             <label className={styles.formLabel}>Username</label>
                             <input onChange={(event) => this.setState({Username: event.target.value})} placeholder="Username" className={styles.formInput} type="text"/>
@@ -46,10 +61,17 @@ class Register extends Component {
         )
     }
 }
+const mapStateToProps = state => {
+    return {
+        error: state.auth.error,
+        isAuth: state.auth.access_token !== null
+    };
+};
+
 const mapDispatchToProps = dispatch => {
     return {
         onAuth: ( name, password, confirmPassword ) => dispatch( actions.auth( name, password, confirmPassword ) )
     };
 };
 
-export default connect( null, mapDispatchToProps )( Register );
+export default connect( mapStateToProps, mapDispatchToProps )( Register );

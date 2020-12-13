@@ -12,6 +12,10 @@ h1{
     font-size: 24px;
     color: #61DBFB;
 }
+.baner:hover{
+    color: #61DBFB;
+    text-decoration: none;
+}
 .noUnder{
     text-decoration: none;
 }

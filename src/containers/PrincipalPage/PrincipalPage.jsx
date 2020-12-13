@@ -1,13 +1,26 @@
-import React from 'react'
+import React, { Component } from 'react'
 import Header from '../../components/Headers/PrincipalPageHeader'
+import { connect } from 'react-redux';
 
+import Projects from '../../components/PrincipalPage/MyProjects/Projects'
 
-const PrincipalPage = () => {
-    return (
+class PrincipalPage extends Component {
+    render() {
+        return (
         <div>
-            <Header></Header>
+            <Header isauth={this.props.token}></Header>
+            <Projects />
         </div>
-    )
+        )
+    }
+    
 }
 
-export default PrincipalPage
+const mapStateToProps = state => {
+    return{
+        token: state.auth.access_token !== null
+    }
+  }
+
+
+export default connect( mapStateToProps, null )( PrincipalPage );

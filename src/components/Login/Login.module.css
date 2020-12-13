@@ -1,7 +1,7 @@
 .centerForm{
-  position: absolute;
+  position: fixed;
   left: 50%;
-  top: 50%;
+  top: 53%;
   -webkit-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
   width: 300px;
@@ -23,6 +23,7 @@
     text-decoration: none;
     padding: 12.5px;
     border-right: 1px solid #61DBFB;
+    margin: 0;
 }
 
 .register{
@@ -31,6 +32,7 @@
     text-decoration: none;
     border-left: 1px solid #61DBFB;
     padding: 12.5px;
+    margin: 0;
 }
 
 .topBarContainer{
@@ -52,10 +54,11 @@
     display: block;
     font-size: 14px;
     margin-left: 10%;
+    margin-bottom: 0px;
 }
 .formInput{
     margin-left: 10%;
-    width: 72.5%;
+    width: 80%;
     border: 2px solid rgb(95, 138, 179);
     border-radius: 3px;
     padding: 10px;
@@ -85,3 +88,15 @@
     background-color: #0693cf;
     cursor: pointer;
 }
+@media (max-height: 480px) {  
+    .centerForm{
+        position: static;
+        margin: auto;
+        left: auto;
+        top: auto;
+        -webkit-transform: unset;
+        transform: unset;
+        margin-top: 20px;
+        margin-bottom: 20px;
+      }
+  }

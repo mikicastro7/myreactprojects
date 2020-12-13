@@ -20,6 +20,12 @@ export const authFail = (error) => {
         error: error
     }
 }
+
+export const logout = () => {
+    return{
+        type: 'AUTH_LOGOUT'
+    }
+}
 export const auth = (name, password, password_confirmation) => {
     return dispatch => {
         dispatch(authStart());
@@ -31,13 +37,11 @@ export const auth = (name, password, password_confirmation) => {
                   name: name,
                   password: password,
                 }
-            }).then(response => {
-                console.log(response.data.access_token);
+            }).then(function (response) {
                 dispatch(authSuccess(response.data.access_token, response.data.user.id));
             })
-            .catch(err => {
-                console.log(err);
-                dispatch(authFail(err));
+            .catch((error) => {
+                dispatch(authFail(error.response.data.message))
             });
         } else {
         Axios({
@@ -49,12 +53,11 @@ export const auth = (name, password, password_confirmation) => {
               password_confirmation: password_confirmation
             }
         }).then(response => {
-            console.log(response.data.access_token);
             dispatch(authSuccess(response.data.access_token, response.data.user.id));
         })
-        .catch(err => {
-            console.log(err);
-            dispatch(authFail(err));
+        .catch(error => {
+            
+            dispatch(authFail(error.response.data.message));
         });
         }
     }
