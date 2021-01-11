@@ -52,7 +52,7 @@ class MyTodoList extends Component {
             method: 'patch',
             url: 'todo/' + id,
             data: {
-              completed : todo.completed,
+              completed : !!todo.completed,
               title : title,
               description : description,
               priority : priority
