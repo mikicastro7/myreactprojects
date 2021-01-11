@@ -32,9 +32,9 @@ class MyTodoList extends Component {
             url: 'todo/' + id,
             data: {
               completed : !todo.completed,
-              title : title,
-              description : description,
-              priority : priority
+              title : todo.title,
+              description : todo.description,
+              priority : todo.priority
             }
           });
           todo.completed = !todo.completed
