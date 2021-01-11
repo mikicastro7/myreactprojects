@@ -83,7 +83,7 @@
   }
   .headerTitle{
       flex: 0 1 auto;
-      position: absolute;             /* new */
+      position: absolute;             
       left: 50%;
       transform: translateX(-50%);
       color: white;
