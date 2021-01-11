@@ -13,7 +13,7 @@ import authReducer from './store/reducers/auth'
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
-Axios.defaults.baseURL = 'http://laravel-api.miquelcastro.com/api/';
+Axios.defaults.baseURL = 'http://localhost:8000/api/';
 Axios.defaults.headers.post['Content-Type'] = 'application/json';
 
 const rootReducer = combineReducers({
