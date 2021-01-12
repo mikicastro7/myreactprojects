@@ -6,11 +6,12 @@ export const authStart = () => {
     }
 }
 
-export const authSuccess = (access_token, userId) => {
+export const authSuccess = (access_token, userId, name) => {
     return {
         type: 'AUTH_SUCCESS',
         access_token: access_token,
-        userId: userId
+        userId: userId,
+        name: name
     }
 }
 
@@ -38,7 +39,7 @@ export const auth = (name, password, password_confirmation) => {
                   password: password,
                 }
             }).then(function (response) {
-                dispatch(authSuccess(response.data.access_token, response.data.user.id));
+                dispatch(authSuccess(response.data.access_token, response.data.user.id, response.data.user.name));
             })
             .catch((error) => {
                 dispatch(authFail(error.response.data.message))
@@ -53,7 +54,7 @@ export const auth = (name, password, password_confirmation) => {
               password_confirmation: password_confirmation
             }
         }).then(response => {
-            dispatch(authSuccess(response.data.access_token, response.data.user.id));
+            dispatch(authSuccess(response.data.access_token, response.data.user.id, response.data.user.name));
         })
         .catch(error => {
             

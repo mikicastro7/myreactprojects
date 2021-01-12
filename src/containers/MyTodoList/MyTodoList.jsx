@@ -26,7 +26,6 @@ class MyTodoList extends Component {
     this.setState({
       todos: this.state.todos.map(todo => {
         if(todo.id === id){
-          
           Axios({
             method: 'patch',
             url: 'todo/' + id,
