@@ -33,9 +33,7 @@ class myComments extends Component {
               
             }
         }).then(response =>{
-            console.log(response)
             const newComment = {
-                
               id : response.data.comments.id,
               comment_text : comment,
               rating : rating,
@@ -45,7 +43,7 @@ class myComments extends Component {
               name: this.props.name
             }
             this.setState({
-              comments : [...this.state.comments, newComment]
+              comments : [newComment, ...this.state.comments]
             })
         });
     }
