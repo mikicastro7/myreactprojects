@@ -10,7 +10,7 @@ const ShareModal = (props) => {
         <div className={style.modal}>
             <div className={style.modalContent}>
                 <div className={style.modalBody}>
-                    <p>localhost:3000/myforms/respondForm/{props.form_key}</p>
+                    <p>http://react-projects.miquelcastro.com/myforms/respondForm/{props.form_key}</p>
                 </div>
                 <div className={style.modalButtons}>
                     <button className={style.cancelButton} onClick={props.onClose}>Close</button>
